@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup as bs
 from imlist import headers
 #from main import user_id,user_pw
 
-
 cookie_dict = {}
 def login(url):
     options = Options()
