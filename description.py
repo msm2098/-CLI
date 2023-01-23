@@ -1,10 +1,10 @@
 from imlist import *
 from session import session_class
-page = 1000
-url="https://www.acmicpc.net/problem/"+str(page)
-dessession = session_class()
+
+
 def show_des():
-    dessession.make_session()
+    dessession = session_class()
+    dessession.update_session()
     descript = dessession.session.get(url)
     title= descript.text
     titlelen=len("problem_title")+2
