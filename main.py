@@ -4,8 +4,7 @@ from menu import menulist
 from session import session_class
 
 print("백준 CLI")
-#user_id=input("ID :")
-#user_pw=input("PW :")
+
 if(len(cookie_dict)==0):
     print("로그인이 되어있지 않습니다 로그인 하시겠습니까?")
     while True:
@@ -25,6 +24,6 @@ if(len(cookie_dict)==0):
             print("다른 기능을 사용하려면 로그인을 해야 합니다.")
             continue
         else:
-            print("잘못된 입력 입니다.")
+            print("잘못된 입력 입니다.")    
             continue
 menulist()

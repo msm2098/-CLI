@@ -8,7 +8,9 @@ def login(url):
     options.add_experimental_option("detach", True)
     driver=webdriver.Chrome(options=options)
     driver.get(url)
-    ID='msm4754@naver.com'
+    #user_id=input("ID :")
+    #user_pw=input("PW :")
+    ID='msm4754'
     PW='qwer0422'
     driver.find_element(By.NAME,'login_user_id').send_keys(ID)
     driver.find_element(By.NAME,'login_password').send_keys(PW)
