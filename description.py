@@ -61,11 +61,12 @@ def show_des():
 def submit():
     global page
     global csrfkey
+    global login_info
     submit_url="https://www.acmicpc.net/submit/"+str(page)
     subsess = session_class()
     subsess.update_session()
     sub_page=subsess.session.get(submit_url)
-    sub=desc = BeautifulSoup(sub_page.content,"html.parser")
+    sub = BeautifulSoup(sub_page.content,"html.parser")
 
     ckey=sub.find('input', {'name': 'csrf_key'})['value']
     path="submit/"+str(page)+".cpp"
@@ -79,5 +80,18 @@ def submit():
     'csrf_key' : csrfkey
     }
     subsess.session.post(submit_url,submit_data)
+
+    stat_url="https://www.acmicpc.net/status?from_mine=1&problem_id="+str(page)+"&user_id="+login_info['user_id']
+    
+    
+    stat_session=session_class()
+    stat_session.update_session()
+    stat_page=stat_session.session.get(stat_url)
+    soup=BeautifulSoup(stat_page.content,"html.parser")
+    status=soup.find('span', {'class': 'result-text'})
+    time.sleep(5)
+    result=soup.find('span', {'class': 'result-ac'}).get_text()
+    print(result)
+    
 
 

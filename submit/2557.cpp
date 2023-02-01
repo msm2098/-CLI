@@ -1,10 +1,7 @@
 #include<stdio.h>
-int main(void)
-{
-	printf("Hello World!");
+int main(void){
 
+printf("hello world");
 
-
-return 0;
-}
-/*가나다라마바사아자차카*/
+return 0;}
+/*aaaaaaa*/
