@@ -83,15 +83,23 @@ def submit():
 
     stat_url="https://www.acmicpc.net/status?from_mine=1&problem_id="+str(page)+"&user_id="+login_info['user_id']
     
-    
+
+    time.sleep(5)
     stat_session=session_class()
     stat_session.update_session()
     stat_page=stat_session.session.get(stat_url)
     soup=BeautifulSoup(stat_page.content,"html.parser")
+    result=soup.select_one(".result-text").get_text()
+    
+    if "맞" in result:
+        print("정답")
+    else:
+        print("오답")
+    '''
     status=soup.find('span', {'class': 'result-text'})
     time.sleep(5)
     result=soup.find('span', {'class': 'result-ac'}).get_text()
-    print(result)
+    print(result)'''
     
 
 
