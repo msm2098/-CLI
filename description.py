@@ -43,15 +43,13 @@ def show_des():
 
     problem_exinput = BeautifulSoup(descript.content,"html.parser")
     problem_exinput2 = problem_exinput.select_one("#sample-input-1").get_text()
-    problem_exinput2 = problem_exinput2.replace("\n",'')
-    problem_exinput2 = problem_exinput2.replace("\t",'')
+    
     print("\n-----------------------------------예제입력-------------------------------------")
     print(problem_exinput2)   
 
     problem_exoutput = BeautifulSoup(descript.content,"html.parser")
     problem_exoutput2 = problem_exoutput.select_one("#sample-output-1").get_text()
-    problem_exoutput2 = problem_exoutput2.replace("\n",'')
-    problem_exoutput2 = problem_exoutput2.replace("\t",'')
+    
     print("\n-----------------------------------예제출력-------------------------------------")
     print(problem_exoutput2)
     print("\n--------------------------------------------------------------------------------")
