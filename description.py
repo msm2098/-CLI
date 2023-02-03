@@ -89,12 +89,17 @@ def submit():
     stat_session.update_session()
     stat_page=stat_session.session.get(stat_url)
     soup=BeautifulSoup(stat_page.content,"html.parser")
-    result=soup.select_one(".result-text").get_text()
-    
-    if "맞" in result:
-        print("정답")
+    if soup.select("span > a") != None:
+        result=soup.select_one(".result-text").get_text()
+        if "맞" in result:
+            print("정답")
+        elif "컴" in result:
+            print("컴파일에러")
+        elif "틀" in result:
+            print("오류")
     else:
-        print("오답")
+        print("컴파일에러2")
+    
     '''
     status=soup.find('span', {'class': 'result-text'})
     time.sleep(5)

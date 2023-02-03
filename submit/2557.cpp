@@ -2,10 +2,10 @@
 using namespace std;
 int main(void){
     
-    cout<<"Hello Wrld!";
+    cout<<"Hello World!";
     
     
     
-    return 0
+    return 0;
 }/*ㅇㅁㅇㅁㅇ=============ㅁㅇㅁㅁ*/
 
