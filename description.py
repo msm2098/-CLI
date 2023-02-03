@@ -96,7 +96,7 @@ def submit():
         elif "컴" in result:
             print("컴파일에러")
         elif "틀" in result:
-            print("오류")
+            print("오답")
     else:
         print("컴파일에러2")
     
